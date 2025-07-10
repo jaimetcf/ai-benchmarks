@@ -1,0 +1,15 @@
+{
+  "task_id": "aime2025_aime2025_ii_11",
+  "question": "Let $ S $ be the set of vertices of a regular 24-gon. Find the number of ways to draw 12 segments of equal lengths so that each vertex in $ S $ is an endpoint of exactly one of the 12 segments.",
+  "evaluator_type": "aime",
+  "source": "AIME2025",
+  "domain": "mathematics",
+  "level": null,
+  "ground_truth": "113",
+  "file_path": null,
+  "metadata": {
+    "subset": "AIME2025-II",
+    "problem_number": 11
+  },
+  "evaluator_config": null
+}

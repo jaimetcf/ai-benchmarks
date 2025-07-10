@@ -1,0 +1,15 @@
+{
+  "task_id": "aime2025_aime2025_i_12",
+  "question": "The set of points in 3-dimensional coordinate space that lie in the plane $x+y+z=75$ whose coordinates satisfy the inequalities $x-yz<y-zx<z-xy$ forms three disjoint convex regions. Exactly one of those regions has finite area. The area of this finite region can be expressed in the form $a\\sqrt{b}$, where $a$ and $b$ are positive integers and $b$ is not divisible by the square of any prime. Find $a+b$.",
+  "evaluator_type": "aime",
+  "source": "AIME2025",
+  "domain": "mathematics",
+  "level": null,
+  "ground_truth": "510",
+  "file_path": null,
+  "metadata": {
+    "subset": "AIME2025-I",
+    "problem_number": 12
+  },
+  "evaluator_config": null
+}

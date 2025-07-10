@@ -1,0 +1,15 @@
+{
+  "task_id": "aime2025_aime2025_i_8",
+  "question": "Let $k$ be real numbers such that the system $|25+20i-z|=5$ and $|z-4-k|=|z-3i-k|$ has exactly one complex solution $z$. The sum of all possible values of $k$ can be written as $\\frac{m}{n}$, where $m$ and $n$ are relatively prime positive integers. Find $m+n$. Here $i=\\sqrt{-1}$.",
+  "evaluator_type": "aime",
+  "source": "AIME2025",
+  "domain": "mathematics",
+  "level": null,
+  "ground_truth": "77",
+  "file_path": null,
+  "metadata": {
+    "subset": "AIME2025-I",
+    "problem_number": 8
+  },
+  "evaluator_config": null
+}

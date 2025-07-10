@@ -1,0 +1,15 @@
+{
+  "task_id": "aime2025_aime2025_ii_2",
+  "question": "Find the sum of all positive integers $ n $ such that $ n + 2 $ divides the product $ 3(n + 3)(n^2 + 9) $.",
+  "evaluator_type": "aime",
+  "source": "AIME2025",
+  "domain": "mathematics",
+  "level": null,
+  "ground_truth": "49",
+  "file_path": null,
+  "metadata": {
+    "subset": "AIME2025-II",
+    "problem_number": 2
+  },
+  "evaluator_config": null
+}

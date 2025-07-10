@@ -1,0 +1,15 @@
+{
+  "task_id": "aime2025_aime2025_i_1",
+  "question": "Find the sum of all integer bases $b>9$ for which $17_{b}$ is a divisor of $97_{b}$.",
+  "evaluator_type": "aime",
+  "source": "AIME2025",
+  "domain": "mathematics",
+  "level": null,
+  "ground_truth": "70",
+  "file_path": null,
+  "metadata": {
+    "subset": "AIME2025-I",
+    "problem_number": 1
+  },
+  "evaluator_config": null
+}

@@ -1,0 +1,15 @@
+{
+  "task_id": "aime2025_aime2025_ii_10",
+  "question": "Sixteen chairs are arranged in a row. Eight people each select a chair in which to sit so that no person sits next to two other people. Let $ N $ be the number of subsets of 16 chairs that could be selected. Find the remainder when $ N $ is divided by 1000.",
+  "evaluator_type": "aime",
+  "source": "AIME2025",
+  "domain": "mathematics",
+  "level": null,
+  "ground_truth": "907",
+  "file_path": null,
+  "metadata": {
+    "subset": "AIME2025-II",
+    "problem_number": 10
+  },
+  "evaluator_config": null
+}

@@ -1,0 +1,39 @@
+[project]
+name = "ai-benchmarks"
+version = "0.1.0"
+description = "A collection of AI agent benchmarks"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    # Core dependencies only - none needed for base functionality
+]
+
+[project.optional-dependencies]
+# Each benchmark's specific dependencies
+aime = []  # AIME has no external dependencies
+gaia = []  # GAIA has no external dependencies
+swebench = [
+    "datasets>=2.14.0",
+    "docker>=6.0.0",
+    "modal",
+    "huggingface-hub",
+]
+browse_comp = [
+    "pandas>=2.0.0",
+]
+gsm8k = []
+# Install all benchmarks
+all = [
+    "datasets>=2.14.0",
+    "docker>=6.0.0",
+    "modal",
+    "huggingface-hub",
+    "pandas>=2.0.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["core", "benchmarks", "__init__.py"]
