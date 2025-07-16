@@ -1,5 +1,6 @@
 import os
 import json
+from tqdm import tqdm
 from core.base_benchmark import BaseBenchmark
 
 
@@ -35,28 +36,31 @@ class Model():
     def getQuestionIds(self):
         return [obj["question_id"] for obj in self._answers if "question_id" in obj]
 
-    def solve(self, question_id):
+    def solve(self, question_id: str) -> str:
         for obj in self._answers:
             if obj.get("question_id") == question_id:
                 return obj.get("answer", "")
         return ""
 
-    def evaluate_on_benchmark(self):
+    def evaluate_on_benchmark(self, max_tasks=None):
         task_ids = self.getQuestionIds()
         print(f'Evaluating {self.name} on {self.benchmark.name.lower()}...')
 
+        # Limit the number of tasks if max_tasks is specified
+        if max_tasks is not None:
+            num_tasks = min(max_tasks, len(task_ids))
+            task_ids = task_ids[:num_tasks]
+
         # Create log file name based on model name and logfile_folder
         log_filename = os.path.join(
-            self.logfile_folder, f'evaluate_{self.name}_on_{self.benchmark.name.lower()}_log.txt')
+            self.logfile_folder, f'log_of_{self.name}_evaluation_on_{self.benchmark.name.lower()}.txt')
         
         total_score = 0
         results = []
 
-        for task_id in task_ids:
+        for task_id in tqdm(task_ids, desc="Processing..."):
             # Get the task
             task = self.benchmark.get_task(task_id)
-            # Get the problem text
-            problem = task.data["question"]
             # Get the model output
             model_output = self.solve(task_id)
             # Evaluate the output
@@ -67,15 +71,17 @@ class Model():
                 "task_id": task_id, 
                 "score": result.score, 
                 "explanation": result.score_explanation, 
-                "model_output": model_output})
+                "model_output": model_output,
+                "ground_truth": task.data["output"],
+            })
             
             # Write individual result to log file
             with open(log_filename, 'a', encoding='utf-8') as f:
                 f.write(f"\nTask: {task_id}\n")
-                f.write(f"Problem: {problem}...\n")
-                f.write(f"Model output: {model_output}\n")
                 f.write(f"Score: {result.score}\n")
                 f.write(f"Explanation: {result.score_explanation}\n")
+                f.write(f"Model output: {model_output}\n")
+                f.write(f"Ground truth: {task.data['output']}\n")
 
         # Calculate and print summary statistics
         accuracy = total_score / len(task_ids) if task_ids else 0
