@@ -37,6 +37,17 @@ See [SETUP_GUIDE.md](SETUP_GUIDE.md) for detailed installation and usage instruc
 - Includes test execution to verify correctness
 - See `swebench/README.md` for details
 
+### GSM8K (Grade School Math 8K)
+- Math word problem benchmark for grade school students
+- 8,000 word problems from the 2019 Grade School Math Competition
+- See `gsm8k/README.md` for detailsThe GSM8K (Grade School Math 8K) benchmark tests mathematical reasoning abilities on grade school word problems.
+
+### ML-Bench (Machine Learning Benchmark)
+- The ML-Bench benchmark tests machine learning code generation abilities by evaluating how well models can generate executable code for various machine learning tasks based on natural language instructions.
+- See `ml_bench/README.md` for details
+
+<br>
+
 ## Unified Interface
 
 All benchmarks implement a common interface defined in `base_benchmark.py`:
@@ -109,6 +120,8 @@ Run examples from the project root:
 python -m benchmarks.examples.example_aime
 python -m benchmarks.examples.example_gaia
 python -m benchmarks.examples.unified_example
+python -m benchmarks.examples.example_evaluate_gpt41_on_gsm8k
+python -m benchmarks.examples.example_evaluate_gpt41_on_ml_bench
 ```
 
 ## Directory Structure
@@ -128,12 +141,22 @@ ai-benchmarks/
 │   ├── gaia/           # GAIA benchmark (no external deps)
 │   │   ├── gaia_benchmark.py
 │   │   └── files/
+│   ├── gsm8k/          # GSM8K benchmark (no external deps)
+│   │   ├── gsm8k_benchmark.py
+│   │   └── data/
+│   ├── ml_bench/       # ML-Bench benchmark (no external deps)
+│   │   ├── ml_bench_benchmark.py
+│   │   ├── data/
+│   │   └── utils/
 │   └── swebench/       # SWE-bench (Docker, datasets, etc.)
 │       ├── swebench.py
 │       └── harness/
+|    
 └── examples/           # Usage examples
     ├── example_aime.py
     ├── example_gaia.py
+    ├── example_evaluate_gpt41_on_gsm8k.py
+    ├── example_evaluate_gpt41_on_ml_bench.py
     ├── unified_example.py
     └── modular_usage_example.py
 ```
